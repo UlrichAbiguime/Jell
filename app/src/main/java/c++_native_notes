@@ -1,0 +1,30 @@
+- first we create a class with the pretended
+native function inside,
+
+just like in Functionz with the native stuff.
+
+- then we create a header.
+ javah -jni -classpath ../../build/intermediates/classes/debug/ -d ./jniLibs/ experta.jell.utilz.Functionz
+
+
+export _JNILIBS_CLASS_REL='../../build/intermediates/classes/debug/'
+--- put this in the ~/.bashrc ... then do
+source ~/.bashrc so that you can replace the previous by
+ javah -jni -classpath $_JNILIBS_CLASS_REL -d ./jniLibs/ experta.jell.utilz.Functionz
+
+... the last paramz is the path to the class.
+
+
+- use environment variables in android studio.
+
+- copy the header, make it in c or c++ format... then ... write then
+Android.mk file, and then compile all the stuffs.
+
+
+https://www.youtube.com/watch?v=RJiocrkn2Z8
+
+
+- we can create the Application.mk file
+ adding APP_ABI to Application.mk make it compile the
+  library to all sorts of platform. the attribute app make it
+  then build of all of them.

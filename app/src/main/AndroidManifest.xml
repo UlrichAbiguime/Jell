@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="experta.jell" >
+
+    <uses-feature android:name="FEATURE_NFC_HOST_CARD_EMULATION" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activityz.MainActivity"
+            android:label="@string/title_activiity_ondraw" >
+        </activity>
+        <activity
+            android:name=".activityz.PagerActivity"
+            android:label="@string/title_activity_pager" >
+        </activity>
+        <activity
+            android:name=".activityz.HomeActivity"
+            android:label="@string/title_activity_home" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activityz.NfcActivity"
+            android:label="@string/title_activity_nfc" >
+        </activity>
+
+        <service android:name=".utilz.MyHostPduService" android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE"/>
+            </intent-filter>
+            <meta-data android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/apduservice"/>
+        </service>
+
+    </application>
+
+</manifest>
