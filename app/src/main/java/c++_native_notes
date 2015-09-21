@@ -28,3 +28,5 @@ https://www.youtube.com/watch?v=RJiocrkn2Z8
  adding APP_ABI to Application.mk make it compile the
   library to all sorts of platform. the attribute app make it
   then build of all of them.
+
+  http://www.jikexueyuan.com/course/android/1-0-3/
